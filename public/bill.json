@@ -1,0 +1,123 @@
+[
+    {
+      "id": 1,
+      "bill_type": "electricity",
+      "icon": "https://i.ibb.co.com/NMMzYpp/Screenshot-2025-05-06-235627.png",
+      "organization": "DESCO",
+      "amount": 1890,
+      "due_date": "22-03-2025"
+    },
+    {
+      "id": 2,
+      "bill_type": "gas",
+      "icon": "https://i.ibb.co.com/L4Bg05P/Screenshot-2025-05-06-232441.png",
+      "organization": "Titas",
+      "amount": 1488,
+      "due_date": "28-03-2025"
+    },
+    {
+      "id": 3,
+      "bill_type": "internet",
+      "icon": "https://i.ibb.co.com/yFWpc9Z7/Screenshot-2025-05-06-192211.png",
+      "organization": "Link3",
+      "amount": 1200,
+      "due_date": "05-04-2025"
+    },
+    {
+      "id": 4,
+      "bill_type": "tuition",
+      "icon": "https://i.ibb.co.com/mFH32VVY/Screenshot-2025-05-06-234044.png",
+      "organization": "Southeast University",
+      "amount": 27500,
+      "due_date": "10-04-2025"
+    },
+    {
+      "id": 5,
+      "bill_type": "water",
+      "icon": "https://i.ibb.co.com/YBk1mG17/Screenshot-2025-05-06-231109.png",
+      "organization": "WASA",
+      "amount": 790,
+      "due_date": "12-04-2025"
+    },
+    {
+      "id": 6,
+      "bill_type": "credit card",
+      "icon": "https://i.ibb.co.com/9HXXsPh2/Screenshot-2025-05-06-235438.png",
+      "organization": "DBBL",
+      "amount": 3500,
+      "due_date": "15-04-2025"
+    },
+    {
+      "id": 7,
+      "bill_type": "electricity",
+      "icon": "https://i.ibb.co.com/mmRHwwk/Screenshot-2025-05-06-232853.png",
+      "organization": "NESCO",
+      "amount": 2100,
+      "due_date": "16-04-2025"
+    },
+    {
+      "id": 8,
+      "bill_type": "gas",
+      "icon": "https://i.ibb.co.com/s9Tmh9ws/Screenshot-2025-05-06-234644.png",
+      "organization": "Bakhrabad",
+      "amount": 1650,
+      "due_date": "17-04-2025"
+    },
+    {
+      "id": 9,
+      "bill_type": "internet",
+      "icon": "https://i.ibb.co.com/S7WvNMb8/Screenshot-2025-05-06-234529.png",
+      "organization": "AmberIT",
+      "amount": 1350,
+      "due_date": "18-04-2025"
+    },
+    {
+      "id": 10,
+      "bill_type": "tuition",
+      "icon": "https://i.ibb.co.com/DPqnnvwL/Screenshot-2025-05-06-234438.png",
+      "organization": "Dhaka College",
+      "amount": 18500,
+      "due_date": "20-04-2025"
+    },
+    {
+      "id": 11,
+      "bill_type": "water",
+      "icon": "https://i.ibb.co/YBk1mG17/Screenshot-2025-05-06-231109.png",
+      "organization": "WASA",
+      "amount": 850,
+      "due_date": "21-04-2025"
+    },
+    {
+      "id": 12,
+      "bill_type": "credit card",
+      "icon": "https://i.ibb.co.com/G3dYK6c3/Screenshot-2025-05-06-234246.png",
+      "organization": "City Bank",
+      "amount": 4900,
+      "due_date": "22-04-2025"
+    },
+    {
+      "id": 13,
+      "bill_type": "electricity",
+      "icon": "https://i.ibb.co.com/mmRHwwk/Screenshot-2025-05-06-232853.png",
+      "organization": "NESCO",
+      "amount": 2300,
+      "due_date": "23-04-2025"
+    },
+    {
+      "id": 14,
+      "bill_type": "gas",
+      "icon": "https://i.ibb.co.com/RkS7rxw2/Screenshot-2025-05-06-232753.png",
+      "organization": "Karnafuli",
+      "amount": 1420,
+      "due_date": "24-04-2025"
+    },
+    {
+      "id": 15,
+      "bill_type": "internet",
+      "icon": "https://i.ibb.co.com/MyJdwDpy/Screenshot-2025-05-06-232653.png",
+      "organization": "BTCL",
+      "amount": 1100,
+      "due_date": "25-04-2025"
+    }
+  ]
+  

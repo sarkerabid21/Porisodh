@@ -1,6 +1,9 @@
 import { createBrowserRouter } from "react-router"
 import HomeLayout from "../layouts/HomeLayout";
 import Home from "../components/homelayout/Home";
+import Bills from "../components/homelayout/Bills";
+import BillDetails from "../components/homelayout/BillDetails";
+import Footer from "daisyui/components/footer";
 
 const router = createBrowserRouter(
     [
@@ -11,7 +14,16 @@ const router = createBrowserRouter(
                 {
                     path:"",
                     element: <Home></Home>
-                }
+                },
+                {
+                    path:"/bills",
+                    element: <Bills></Bills>
+                    
+                },
+                {
+                    path: "/categories/:id",
+                    element: <BillDetails></BillDetails>
+                },
             ]
         },
         {
@@ -22,6 +34,7 @@ const router = createBrowserRouter(
             path:"/*",
             element: <h2>Error 404</h2>
         },
+       
     ]
 );
 export default router;
