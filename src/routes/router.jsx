@@ -4,6 +4,9 @@ import Home from "../components/homelayout/Home";
 import Bills from "../components/homelayout/Bills";
 import BillDetails from "../components/homelayout/BillDetails";
 import Footer from "daisyui/components/footer";
+import Login from "../page/Login";
+import Register from "../page/Register";
+import AuthLayout from "../layouts/AuthLayout";
 
 const router = createBrowserRouter(
     [
@@ -28,7 +31,17 @@ const router = createBrowserRouter(
         },
         {
             path:"/auth",
-            element: <h2>Authentication layout</h2>
+            element: <AuthLayout></AuthLayout> ,
+            children:[
+                {
+                    path:"/auth/login",
+                    element: <Login></Login>
+                },
+                {
+                    path:"/auth/register",
+                    element: <Register></Register>
+                },
+            ]
         },
         {
             path:"/*",

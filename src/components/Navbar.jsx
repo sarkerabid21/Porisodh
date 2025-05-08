@@ -1,7 +1,7 @@
 import React from 'react';
 import icon from "../assets/logo.png"
 import logo from "../assets/logoname.png"
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
 
 const Navbar = () => {
     return (
@@ -40,8 +40,9 @@ const Navbar = () => {
                 
             </div>
   <div className="navbar-end gap-4 ">
-    <button className="btn btn-primary text-xs w-[20%]">Login</button>
-    <button className="btn btn-secondary text-xs w-[30%]">Register</button>
+    <Link to="/auth/login" className="btn btn-primary text-xs w-[20%]">Login</Link>
+    <Link to="/auth/register" className="btn btn-secondary text-xs w-[30%]">Register</Link>
+    
   </div>
 </div>
     );
