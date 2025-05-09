@@ -59,16 +59,17 @@ const Home = () => {
       <div className="absolute top-[40%] right-[12%] z-[100] max-w-[30%] lg:w-[300px] flex gap-2 items-center">
         <button
           onClick={prevSlide}
-          className="lg:w-[60px] w-[30px] h-[30px]  lg:h-[60px] rounded-full bg-secondary border-none text-white font-bold hover:bg-white hover:text-black transition-all duration-500"
+          className="lg:w-[60px] w-[30px] h-[30px]  lg:h-[60px] rounded-full bg-secondary border-none text-white font-bold hover:bg-white hover:text-black transition-all duration-500 cursor-pointer"
         >
           &lt;
         </button>
         <button
           onClick={nextSlide}
-          className="lg:w-[60px] w-[30px] h-[30px]  lg:h-[60px] rounded-full bg-secondary border-none text-white font-bold hover:bg-white hover:text-black transition-all duration-500"
+          className="lg:w-[60px] w-[30px] h-[30px]  lg:h-[60px] rounded-full bg-secondary border-none text-white font-bold hover:bg-white hover:text-black transition-all duration-500 cursor-pointer"
         >
           &gt;
         </button>
+        
       </div>
     </div>
     <div>

@@ -7,6 +7,7 @@ import Footer from "daisyui/components/footer";
 import Login from "../page/Login";
 import Register from "../page/Register";
 import AuthLayout from "../layouts/AuthLayout";
+import PrivateRoute from "../provider/PrivateRoute";
 
 const router = createBrowserRouter(
     [
@@ -20,7 +21,7 @@ const router = createBrowserRouter(
                 },
                 {
                     path:"/bills",
-                    element: <Bills></Bills>
+                    element: <PrivateRoute><Bills></Bills></PrivateRoute>
                     
                 },
                 {

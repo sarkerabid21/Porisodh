@@ -32,7 +32,7 @@ const Register = () => {
 
 
     return (
-        <div className='bg-green-100 flex justify-center items-center min-h-screen'>
+        <div className='bg-gradient-to-b from-gray-100 to-green-200 flex justify-center items-center min-h-screen'>
  <div className="card bg-white w-full max-w-sm shrink-0 shadow-2xl py-5">
     <h2 className='font-bold text-3xl text-center underline'>Register Your Account</h2>
       <form onSubmit={handleRegister} className="card-body">

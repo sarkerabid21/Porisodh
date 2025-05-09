@@ -18,7 +18,7 @@ const BillDetails = () => {
   if (!bill) return <div className="text-center py-10"><span className="loading loading-spinner loading-xl"></span></div>;
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+    <div className="bg-gradient-to-b from-gray-100 to-green-200 flex justify-center items-center min-h-screen bg-gray-100">
       <div className="flex flex-col md:flex-row bg-white rounded-xl shadow-lg p-6 w-full max-w-3xl">
         <div className="flex-1 flex items-center justify-center">
           <img src={bill.icon} alt="icon" className="w-48 h-48 object-contain" />
