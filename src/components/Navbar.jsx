@@ -1,18 +1,27 @@
-import React from 'react';
+import React, { use } from 'react';
 import icon from "../assets/logo.png"
 import logo from "../assets/logoname.png"
 import { Link, NavLink } from 'react-router';
+import { AuthContext } from '../provider/AuthProvider';
+
 
 const Navbar = () => {
+
+    const  {user , logOut}=use(AuthContext);
+    const handleLogOut =()=>{
+        console.log("user try logout");
+        logOut().then(() => {
+            alert("You logged out successfully.")
+          }).catch((error) => {
+            console.log(error)
+          });
+          
+    }
+
+
+
     return (
-//         <div>
-//            <div class="logo">
-// <img src={icon} alt=""/>
-// <img src={icon} alt=""/>
-//            </div>
-//            <div class="nav"></div>
-//            <div class="login-btn"></div>
-//         </div>
+
 <div className="navbar bg-base-100 shadow-sm  ">
   <div className="navbar-start">
     <div className="dropdown">
@@ -40,7 +49,15 @@ const Navbar = () => {
                 
             </div>
   <div className="navbar-end gap-4 ">
-    <Link to="/auth/login" className="btn btn-primary text-xs w-[20%]">Login</Link>
+    <div className=' rounded-2xl py-1 px-3 '>{user && user.email}</div>
+
+    {
+        user ? <button onClick={handleLogOut} className="btn btn-primary text-xs w-[20%]">Logout</button> :  
+        <Link to="/auth/login" className="btn btn-primary text-xs w-[20%]">Login</Link>
+    }
+
+
+   
     <Link to="/auth/register" className="btn btn-secondary text-xs w-[30%]">Register</Link>
     
   </div>
