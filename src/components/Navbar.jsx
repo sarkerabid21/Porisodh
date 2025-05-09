@@ -6,7 +6,7 @@ import { AuthContext } from '../provider/AuthProvider';
 
 
 const Navbar = () => {
-
+const userIcon = "https://i.ibb.co.com/mCtVwWf7/user.png"
     const  {user , logOut}=use(AuthContext);
     const handleLogOut =()=>{
         console.log("user try logout");
@@ -49,7 +49,8 @@ const Navbar = () => {
                 
             </div>
   <div className="navbar-end gap-4 ">
-    <div className=' rounded-2xl py-1 px-3 '>{user && user.email}</div>
+    <img className='w-12 rounded-full' src={`${user ? user.photoURL : userIcon}`} alt=""/>
+    <div className=' rounded-2xl py-1 px-3 hidden '>{user && user.email}</div>
 
     {
         user ? <button onClick={handleLogOut} className="btn btn-primary text-xs w-[20%]">Logout</button> :  
@@ -58,7 +59,7 @@ const Navbar = () => {
 
 
    
-    <Link to="/auth/register" className="btn btn-secondary text-xs w-[30%]">Register</Link>
+    <Link to="/auth/register" className="btn btn-secondary text-xs w-[30%] ">Register</Link>
     
   </div>
 </div>
