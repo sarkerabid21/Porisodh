@@ -1,12 +1,17 @@
-import React, { use } from 'react';
+import React, { use, useContext } from 'react';
 import icon from "../assets/logo.png"
 import logo from "../assets/logoname.png"
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
-
+import { BalanceContext } from '../page/BalanceProvider';
 
 const Navbar = () => {
+
+    
+
+
 const userIcon = "https://i.ibb.co.com/mCtVwWf7/user.png"
+const { balance } = useContext(BalanceContext);
     const  {user , logOut}=use(AuthContext);
     const handleLogOut =()=>{
         console.log("user try logout");
@@ -49,7 +54,33 @@ const userIcon = "https://i.ibb.co.com/mCtVwWf7/user.png"
                 
             </div>
   <div className="navbar-end gap-4 ">
-    <img className='w-12 rounded-full' src={`${user ? user.photoURL : userIcon}`} alt=""/>
+
+  <details className="dropdown">
+  <summary className="btn p-0 w-10 h-10 min-h-0 rounded-full border-0 overflow-hidden">
+    <img className="w-full h-full object-cover" src={`${user ? user.photoURL : userIcon}`} alt="User" />
+  </summary> 
+  <ul className="menu dropdown-content bg-base-100 rounded-box z-10 w-64 p-2 shadow-sm mt-2">
+    <li>
+      <a className="block w-full  text-sm">
+        {user && user.displayName }
+      </a>
+    </li>
+    <li>
+      <a className="block w-full  text-sm">
+        {user && user.email }
+      </a>
+    </li>
+    <li><a className='font-semibold'>Tk: {balance}</a></li>
+
+  </ul>
+</details>
+
+
+
+
+
+
+   
     <div className=' rounded-2xl py-1 px-3 hidden '>{user && user.email}</div>
 
     {

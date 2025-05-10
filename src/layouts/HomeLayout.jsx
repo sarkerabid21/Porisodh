@@ -1,19 +1,24 @@
 import React from 'react';
-import { Outlet } from 'react-router';
+import { Outlet, useNavigation } from 'react-router';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import Loadingg from '../page/Loadingg';
 
 const HomeLayout = () => {
+    const {state} = useNavigation();
     return (
         <div>
             <header>
                 
                 <Navbar></Navbar>
+
+                {import.meta.env. VITE_name}
                 
                 
             </header>
             <main>
-                <Outlet></Outlet>
+                {state=="loading"? <Loadingg/>: <Outlet></Outlet>}
+         
             </main>
             
             <Footer></Footer>

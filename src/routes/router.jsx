@@ -8,6 +8,7 @@ import Login from "../page/Login";
 import Register from "../page/Register";
 import AuthLayout from "../layouts/AuthLayout";
 import PrivateRoute from "../provider/PrivateRoute";
+import Profile from "../components/homelayout/Profile";
 
 const router = createBrowserRouter(
     [
@@ -27,6 +28,10 @@ const router = createBrowserRouter(
                 {
                     path: "/categories/:id",
                     element: <BillDetails></BillDetails>
+                },
+                {
+                    path: "/profile",
+                    element: <Profile></Profile>
                 },
             ]
         },
