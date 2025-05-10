@@ -1,8 +1,12 @@
 import { useState } from "react";
-import img1 from "./assets/img1.jpg";
-import img2 from "./assets/img2.jpg";
-import img3 from "./assets/img3.jpg";
-import img4 from "./assets/img4.jpg";
+const img2 = "https://i.ibb.co.com/k6v3fZK3/img2.jpg";
+const img3 = "https://i.ibb.co.com/4ZsxYtp6/img3.jpg";
+const img4 = "https://i.ibb.co.com/dsPk6XH2/img4.jpg";
+const img1 = "https://i.ibb.co.com/TqNMjhNg/img1.jpg";
+
+
+
+
 
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

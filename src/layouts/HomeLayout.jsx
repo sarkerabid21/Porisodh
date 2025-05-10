@@ -12,7 +12,7 @@ const HomeLayout = () => {
                 
                 <Navbar></Navbar>
 
-                {import.meta.env. VITE_name}
+                {import.meta.env.VITE_name}
                 
                 
             </header>

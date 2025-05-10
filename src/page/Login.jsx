@@ -1,8 +1,16 @@
 import React, { use, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
+import { FcGoogle } from 'react-icons/fc';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { auth } from '../firebase/firebase.config';
 
 const Login = () => {
+
+    const provider = new GoogleAuthProvider();
+
+
+
     const [error, setError] = useState("");
 
     const { signIn } = use(AuthContext);
@@ -31,17 +39,27 @@ const Login = () => {
             setError("");
         }
 
-        // Try sign in
         signIn(email, password)
             .then((result) => {
                 const user = result.user;
-                console.log(user);
+                // console.log(user);
                 navigate(location.state ? location.state : "/");
             })
             .catch((error) => {
                 setError("Invalid credentials. Please try again.");
             });
     };
+
+    const handleGoogleSignIn = () =>{
+        // console.log('google sign in cliked');
+
+        signInWithPopup(auth , provider)
+        .then(result => {
+            // console.log(result)
+        }).catch(error => {
+            console.log(error)
+        })
+    }
 
     return (
         <div className='bg-gradient-to-b from-gray-100 to-green-200 flex justify-center items-center min-h-screen'>
@@ -57,7 +75,14 @@ const Login = () => {
 
                         {error && <p className='text-red-500 text-xs mt-1'>{error}</p>}
 
-                        <button type='submit' className="btn btn-neutral mt-4">Login</button>
+                        <div className='space-y-4'>
+                        <button  type='submit' className="btn btn-neutral mt-4 w-full">Login</button>
+
+<button onClick={handleGoogleSignIn} className='btn btn-secondary w-full'><FcGoogle size={24}/>Login with Google</button>
+
+                        </div>
+
+
                         <p className='mt-3 text-center font-semibold'>
                             Don't Have An Account? <Link className='text-secondary font-semibold' to="/auth/register">Register</Link>
                         </p>

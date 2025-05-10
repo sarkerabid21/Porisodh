@@ -1,9 +1,11 @@
 import React, { use, useContext } from 'react';
-import icon from "../assets/logo.png"
-import logo from "../assets/logoname.png"
+const icon = "https://i.ibb.co.com/n8QVKM09/logo.png"
+const logo = "https://i.ibb.co.com/C53dDPQr/logoname.png"
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
 import { BalanceContext } from '../page/BalanceProvider';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const Navbar = () => {
 
@@ -14,9 +16,11 @@ const userIcon = "https://i.ibb.co.com/mCtVwWf7/user.png"
 const { balance } = useContext(BalanceContext);
     const  {user , logOut}=use(AuthContext);
     const handleLogOut =()=>{
+        toast("You logged out successfully.");
         console.log("user try logout");
         logOut().then(() => {
-            alert("You logged out successfully.")
+          
+            // alert("")
           }).catch((error) => {
             console.log(error)
           });
@@ -71,6 +75,7 @@ const { balance } = useContext(BalanceContext);
       </a>
     </li>
     <li><a className='font-semibold'>Tk: {balance}</a></li>
+    <li> <Link onClick={handleLogOut}  className="">LogOut</Link></li>
 
   </ul>
 </details>
@@ -84,7 +89,7 @@ const { balance } = useContext(BalanceContext);
     <div className=' rounded-2xl py-1 px-3 hidden '>{user && user.email}</div>
 
     {
-        user ? <button onClick={handleLogOut} className="btn btn-primary text-xs w-[20%]">Logout</button> :  
+        user ? <button onClick={handleLogOut} className="btn btn-primary text-xs w-[20%]">LogOut</button> :  
         <Link to="/auth/login" className="btn btn-primary text-xs w-[20%]">Login</Link>
     }
 

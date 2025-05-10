@@ -1,8 +1,13 @@
 import React, { use, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
+import { FcGoogle } from 'react-icons/fc';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { auth } from '../firebase/firebase.config';
 
 const Register = () => {
+    const provider = new GoogleAuthProvider();
+
     const [nameError, setNameError] = useState("");
     const [passwordError, setPasswordError] = useState("");
     const { createUser, setUser, updateUser } = use(AuthContext);
@@ -51,7 +56,7 @@ const Register = () => {
                         navigate("/");
                     })
                     .catch(error => {
-                        console.log(error);
+                        // console.log(error);
                         setUser(user);
                     });
             })
@@ -59,6 +64,16 @@ const Register = () => {
                 alert(error.message);
             });
     };
+      const handleGoogleSignIn = () =>{
+            //  console.log('google sign in cliked');
+     
+             signInWithPopup(auth,provider)
+             .then(result => {
+                //  console.log(result)
+             }).catch(error => {
+                 console.log(error)
+             })
+         }
 
     return (
         <div className='bg-gradient-to-b from-gray-100 to-green-200 flex justify-center items-center min-h-screen'>
@@ -82,7 +97,15 @@ const Register = () => {
 
                         <div><a className="link link-hover">Forgot password?</a></div>
 
-                        <button type='submit' className="btn btn-neutral mt-4">Register</button>
+                        <div className='space-y-4'>
+                        <button type='submit ' className="btn btn-neutral mt-4 w-full" to="/">Register</button>
+
+<button onClick={handleGoogleSignIn} className='btn  btn-secondary w-full' to="/"><FcGoogle size={24}/>Login with Google</button>
+                        </div>
+
+
+
+
                         <p className='mt-3 text-center font-semibold'>
                             Already Have An Account? <Link className='text-secondary font-semibold' to="/auth/login">Login</Link>
                         </p>
